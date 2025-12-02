@@ -42,12 +42,10 @@ const CarCard = memo(({ car, index = 0, viewMode = 'grid' }) => {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-zinc-900" />
                     
                     {/* Available Badge */}
-                    {car.isAvailable && (
-                        <div className='absolute top-3 left-3 flex items-center gap-2 bg-black/70 backdrop-blur-md text-gray-300 border border-gray-400/30 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider'>
-                            <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse" />
-                            Available
-                        </div>
-                    )}
+                    <div className={`absolute top-3 left-3 flex items-center gap-2 bg-black/70 backdrop-blur-md border border-gray-400/30 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider ${car.isAvailable ? 'text-emerald-300' : 'text-red-300'}`}>
+                        <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${car.isAvailable ? 'bg-emerald-500' : 'bg-red-500'}`} />
+                        {car.isAvailable ? 'Available' : 'Unavailable'}
+                    </div>
                 </div>
 
                 {/* Content */}
@@ -140,12 +138,10 @@ const CarCard = memo(({ car, index = 0, viewMode = 'grid' }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
                 {/* Available badge */}
-                {car.isAvailable && (
-                    <div className='absolute top-3 left-3 flex items-center gap-1.5 bg-black/70 backdrop-blur-md text-gray-300 border border-gray-400/30 text-[9px] sm:text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider'>
-                        <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse" />
-                        Available
-                    </div>
-                )}
+                <div className={`absolute top-3 left-3 flex items-center gap-1.5 bg-black/70 backdrop-blur-md border border-gray-400/30 text-[9px] sm:text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider ${car.isAvailable ? 'text-emerald-300' : 'text-red-300'}`}>
+                    <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${car.isAvailable ? 'bg-emerald-500' : 'bg-red-500'}`} />
+                    {car.isAvailable ? 'Available' : 'Unavailable'}
+                </div>
 
                 {/* Price tag */}
                 <div className='absolute bottom-3 right-3 bg-black/80 backdrop-blur-xl text-white px-3 sm:px-4 py-2 rounded-xl border border-white/10 group-hover:border-white/50 transition-colors'>

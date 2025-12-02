@@ -727,7 +727,7 @@ const ManageCars = () => {
                   >
                     <div className="flex items-center gap-2">
                       <motion.div 
-                        className={`w-2 h-2 rounded-full ${car.isAvailable ? 'bg-gray-300' : 'bg-gray-300'}`}
+                        className={`w-2 h-2 rounded-full ${car.isAvailable ? 'bg-emerald-500' : 'bg-red-500'}`}
                         animate={car.isAvailable ? { scale: [1, 1.3, 1], opacity: [1, 0.7, 1] } : {}}
                         transition={{ duration: 2, repeat: Infinity }}
                       />
