@@ -8,7 +8,7 @@
 
 body {
   background-color: #000000; /* Pure Black */
-  color: #e2e8f0; /* Slate 200 */
+  color: #e5e5e5; /* Neutral 200 */
 }
 
 /* Custom Scrollbar for dark theme */
@@ -21,12 +21,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1a1a1a;
+  background: #262626;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f59e0b;
+  background: #ffffff;
 }
 
 /* Hide scrollbar for horizontal scroll containers */
@@ -40,10 +40,10 @@ body {
 }
 
 @theme {
-  --color-primary: #f59e0b; /* Amber 500 - Gold/Amber accent */
-  --color-primary-dull: #d97706; /* Amber 600 */
+  --color-primary: #ffffff; /* Pure White accent */
+  --color-primary-dull: #a3a3a3; /* Neutral 400 */
   --color-light: #0a0a0a; /* Near black */
-  --color-borderColor: #1a1a1a; /* Dark gray border */
+  --color-borderColor: #262626; /* Neutral 800 border */
   
   --animate-fade-in: fade-in 0.5s ease-out forwards;
   --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
@@ -92,8 +92,8 @@ body {
   }
 
   @keyframes glow {
-    from { box-shadow: 0 0 20px rgba(245, 158, 11, 0.2); }
-    to { box-shadow: 0 0 40px rgba(245, 158, 11, 0.4); }
+    from { box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
+    to { box-shadow: 0 0 40px rgba(255, 255, 255, 0.2); }
   }
 
   @keyframes gradient-x {
@@ -104,13 +104,13 @@ body {
   --animate-gradient-x: gradient-x 3s ease infinite;
 }
 
-/* Utility classes for the luxury theme */
+/* Utility classes for the professional B&W theme */
 .luxury-gradient {
-  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 50%, #dc2626 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 50%, #737373 100%);
 }
 
 .text-luxury {
-  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #d4d4d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

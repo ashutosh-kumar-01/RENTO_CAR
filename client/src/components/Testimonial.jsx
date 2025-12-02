@@ -56,7 +56,7 @@ const Testimonial = () => {
       
       {/* Static Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[500px] md:h-[800px] bg-amber-500/5 rounded-full blur-[150px] md:blur-[200px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[500px] md:h-[800px] bg-white/5 rounded-full blur-[150px] md:blur-[200px]"></div>
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         
@@ -73,9 +73,9 @@ const Testimonial = () => {
         transition={{ duration: 0.5 }}
         className="text-center mb-12 sm:mb-16 md:mb-20 relative z-10"
       >
-        <span className="text-amber-500 text-[10px] sm:text-xs font-medium tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-3 sm:mb-4 block">Testimonials</span>
+        <span className="text-white text-[10px] sm:text-xs font-medium tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-3 sm:mb-4 block">Testimonials</span>
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight">
-          WHAT OUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">CLIENTS</span> SAY
+          WHAT OUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-300">CLIENTS</span> SAY
         </h2>
       </motion.div>
 
@@ -95,7 +95,7 @@ const Testimonial = () => {
               {Array(testimonials[activeIndex].rating).fill(0).map((_, i) => (
                 <svg
                   key={i}
-                  className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500"
+                  className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -116,10 +116,10 @@ const Testimonial = () => {
                   src={testimonials[activeIndex].image}
                   alt={testimonials[activeIndex].name}
                   loading="lazy"
-                  className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full object-cover border-2 border-amber-500/50"
+                  className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full object-cover border-2 border-white/50"
                 />
-                <div className="absolute -bottom-1 sm:-bottom-2 -right-1 sm:-right-2 bg-black p-0.5 sm:p-1 rounded-full border border-amber-500/30">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                <div className="absolute -bottom-1 sm:-bottom-2 -right-1 sm:-right-2 bg-black p-0.5 sm:p-1 rounded-full border border-white/30">
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                 </div>
@@ -128,7 +128,7 @@ const Testimonial = () => {
               <div className="text-center">
                 <h4 className="text-lg sm:text-xl font-bold text-white">{testimonials[activeIndex].name}</h4>
                 <p className="text-gray-500 text-xs sm:text-sm">{testimonials[activeIndex].location}</p>
-                <p className="text-amber-500 text-[10px] sm:text-xs mt-1 uppercase tracking-wider">{testimonials[activeIndex].car}</p>
+                <p className="text-white text-[10px] sm:text-xs mt-1 uppercase tracking-wider">{testimonials[activeIndex].car}</p>
               </div>
             </div>
           </motion.div>
@@ -142,7 +142,7 @@ const Testimonial = () => {
               onClick={() => setActiveIndex(index)}
               className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
                 index === activeIndex 
-                  ? 'w-8 sm:w-12 bg-gradient-to-r from-amber-500 to-orange-600' 
+                  ? 'w-8 sm:w-12 bg-gradient-to-r from-white to-gray-400' 
                   : 'w-1.5 sm:w-2 bg-gray-700 hover:bg-gray-600'
               }`}
             />
@@ -153,7 +153,7 @@ const Testimonial = () => {
         <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 hidden md:flex justify-between pointer-events-none">
           <button
             onClick={() => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-            className="pointer-events-auto w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-amber-500/50 transition-all hover:bg-white/5 -ml-4 lg:-ml-16"
+            className="pointer-events-auto w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/50 transition-all hover:bg-white/5 -ml-4 lg:-ml-16"
           >
             <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
@@ -161,7 +161,7 @@ const Testimonial = () => {
           </button>
           <button
             onClick={() => setActiveIndex((prev) => (prev + 1) % testimonials.length)}
-            className="pointer-events-auto w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-amber-500/50 transition-all hover:bg-white/5 -mr-4 lg:-mr-16"
+            className="pointer-events-auto w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/50 transition-all hover:bg-white/5 -mr-4 lg:-mr-16"
           >
             <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />

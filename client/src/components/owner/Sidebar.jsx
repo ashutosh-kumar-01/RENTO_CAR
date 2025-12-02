@@ -46,8 +46,8 @@ const Sidebar = () => {
         >
             {/* Background Decoration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-20 -left-20 w-40 h-40 bg-amber-500/5 rounded-full blur-3xl" />
-                <div className="absolute -bottom-20 -left-10 w-32 h-32 bg-orange-500/5 rounded-full blur-3xl" />
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-white/5 rounded-full blur-3xl" />
+                <div className="absolute -bottom-20 -left-10 w-32 h-32 bg-gray-300/5 rounded-full blur-3xl" />
             </div>
 
             {/* Profile Section */}
@@ -59,7 +59,7 @@ const Sidebar = () => {
                 <label htmlFor="image" className="cursor-pointer group block relative">
                     {/* Animated Ring */}
                     <motion.div 
-                        className="absolute -inset-1 rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500"
+                        className="absolute -inset-1 rounded-full bg-gradient-to-r from-white via-gray-300 to-white"
                         animate={{ 
                             backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                         }}
@@ -92,7 +92,7 @@ const Sidebar = () => {
 
                     {/* Online Indicator */}
                     <motion.div 
-                        className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-emerald-400 rounded-full border-2 border-black"
+                        className={`absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full border-2 border-black ${user ? 'bg-emerald-500' : 'bg-red-500'}`}
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
                     />
@@ -108,7 +108,7 @@ const Sidebar = () => {
                         exit={{ opacity: 0, scale: 0.8, y: -10 }}
                         onClick={updateImage}
                         disabled={isUploading}
-                        className='absolute top-2 right-2 flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-black text-xs font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/25 transition-all disabled:opacity-50 z-20'
+                        className='absolute top-2 right-2 flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-white to-gray-300 text-black text-xs font-bold rounded-lg hover:shadow-lg hover:shadow-white/25 transition-all disabled:opacity-50 z-20'
                     >
                         {isUploading ? (
                             <motion.div 
@@ -143,7 +143,7 @@ const Sidebar = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4 }}
                 >
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-white/10 text-gray-200 border border-white/20">
                         Premium Owner
                     </span>
                 </motion.div>
@@ -166,7 +166,7 @@ const Sidebar = () => {
                             className={({ isActive }) => `
                                 relative flex items-center gap-3 w-full py-3.5 px-5 transition-all duration-300 group
                                 ${isActive 
-                                    ? 'bg-gradient-to-r from-amber-500/15 to-transparent text-amber-400' 
+                                    ? 'bg-gradient-to-r from-white/15 to-transparent text-gray-200' 
                                     : 'text-gray-400 hover:text-white hover:bg-white/5'
                                 }
                             `}
@@ -177,7 +177,7 @@ const Sidebar = () => {
                                     {isActive && (
                                         <motion.div 
                                             layoutId="activeIndicator"
-                                            className='absolute right-0 w-1 h-8 bg-gradient-to-b from-amber-400 to-orange-500 rounded-l-full shadow-lg shadow-amber-500/50'
+                                            className='absolute right-0 w-1 h-8 bg-gradient-to-b from-gray-200 to-gray-300 rounded-l-full shadow-lg shadow-white/50'
                                             transition={{ type: "spring", stiffness: 400, damping: 30 }}
                                         />
                                     )}
@@ -189,7 +189,7 @@ const Sidebar = () => {
                                         transition={{ type: "spring", stiffness: 400 }}
                                     >
                                         {isActive && (
-                                            <div className="absolute inset-0 bg-amber-500/30 rounded-lg blur-md" />
+                                            <div className="absolute inset-0 bg-white/30 rounded-lg blur-md" />
                                         )}
                                         <img 
                                             src={isActive ? link.coloredIcon : link.icon} 
@@ -202,7 +202,7 @@ const Sidebar = () => {
 
                                     {/* Hover Arrow */}
                                     <motion.svg 
-                                        className={`w-4 h-4 ml-auto max-md:hidden ${isActive ? 'text-amber-400' : 'text-transparent group-hover:text-white/50'} transition-colors`}
+                                        className={`w-4 h-4 ml-auto max-md:hidden ${isActive ? 'text-gray-200' : 'text-transparent group-hover:text-white/50'} transition-colors`}
                                         fill="none" 
                                         stroke="currentColor" 
                                         viewBox="0 0 24 24"
@@ -242,8 +242,8 @@ const Sidebar = () => {
             >
                 <div className='relative p-4 rounded-2xl overflow-hidden'>
                     {/* Card Background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-orange-600/5 to-transparent" />
-                    <div className="absolute inset-0 border border-amber-500/20 rounded-2xl" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-gray-400/5 to-transparent" />
+                    <div className="absolute inset-0 border border-white/20 rounded-2xl" />
                     
                     {/* Animated Shine */}
                     <motion.div 
@@ -254,14 +254,16 @@ const Sidebar = () => {
 
                     <div className="relative z-10">
                         <div className="flex items-center gap-2 mb-2">
-                            <motion.span 
-                                className="text-xl"
+                            <motion.div 
+                                className="w-6 h-6 flex items-center justify-center"
                                 animate={{ rotate: [0, 10, -10, 0] }}
                                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                             >
-                                🚗
-                            </motion.span>
-                            <span className='text-amber-400 text-sm font-bold'>RentoCar</span>
+                                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-2-4H7L5 9m14 0v8a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H8v1a1 1 0 01-1 1H6a1 1 0 01-1-1V9m14 0H5m14 0a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2a2 2 0 012-2" />
+                                </svg>
+                            </motion.div>
+                            <span className='text-gray-200 text-sm font-bold'>RentoCar</span>
                         </div>
                         <p className='text-gray-400 text-xs leading-relaxed'>
                             Manage your fleet & maximize earnings with our premium tools
@@ -270,13 +272,13 @@ const Sidebar = () => {
                         {/* Mini Stats */}
                         <div className="flex gap-3 mt-3 pt-3 border-t border-white/5">
                             <div className="text-center">
-                                <p className="text-amber-400 font-bold text-sm">v2.0</p>
+                                <p className="text-gray-200 font-bold text-sm">v2.0</p>
                                 <p className="text-gray-600 text-[10px]">Version</p>
                             </div>
                             <div className="text-center">
                                 <div className="flex items-center gap-1">
-                                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
-                                    <p className="text-emerald-400 font-bold text-sm">Live</p>
+                                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                                    <p className="text-gray-300 font-bold text-sm">Live</p>
                                 </div>
                                 <p className="text-gray-600 text-[10px]">Status</p>
                             </div>

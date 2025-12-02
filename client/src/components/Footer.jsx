@@ -89,8 +89,8 @@ const Footer = () => {
       {/* Static Background Elements - NO animations */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Static gradient orbs - just CSS, no motion */}
-        <div className="absolute top-0 left-1/4 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-gradient-to-br from-amber-500/5 to-orange-600/5 rounded-full blur-[150px]" />
-        <div className="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-br from-cyan-500/3 to-blue-600/3 rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-1/4 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-gradient-to-br from-white/5 to-gray-400/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-br from-gray-400/3 to-gray-500/3 rounded-full blur-[120px]" />
         
         {/* Static grid pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
@@ -102,14 +102,14 @@ const Footer = () => {
         {particles.map((p) => (
           <div
             key={p.id}
-            className="absolute w-1 h-1 bg-amber-500/20 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-white/20 rounded-full animate-pulse"
             style={{ left: p.left, top: p.top }}
           />
         ))}
       </div>
 
       {/* Top Decorative Line - static */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/50 to-transparent" />
 
       {/* Stats Bar */}
       <motion.div
@@ -123,10 +123,10 @@ const Footer = () => {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="relative bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 text-center hover:border-amber-500/30 transition-colors"
+              className="relative bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 text-center hover:border-white/30 transition-colors"
             >
               <span className="text-2xl md:text-3xl mb-1 md:mb-2 block">{stat.icon}</span>
-              <p className="text-2xl md:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-300">
                 {stat.value}
               </p>
               <p className="text-gray-500 text-xs md:text-sm mt-1">{stat.label}</p>
@@ -149,7 +149,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div>
             <Link to="/" className="inline-flex items-center gap-3 mb-6 group">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-600 rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:shadow-amber-500/50 transition-all">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-gray-200 via-white to-gray-400 rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg shadow-white/25 group-hover:shadow-white/50 transition-all">
                 <svg className="w-6 h-6 md:w-9 md:h-9 text-black" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
                 </svg>
@@ -157,7 +157,7 @@ const Footer = () => {
               <div>
                 <div className="flex items-baseline">
                   <span className="text-xl md:text-3xl font-black tracking-tight text-white">Rento</span>
-                  <span className="text-xl md:text-3xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Car</span>
+                  <span className="text-xl md:text-3xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-300">Car</span>
                 </div>
                 <span className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] text-gray-600">Premium Rentals</span>
               </div>
@@ -171,7 +171,7 @@ const Footer = () => {
               {["SSL Secured", "Verified", "Trusted"].map((badge) => (
                 <span
                   key={badge}
-                  className="px-2 md:px-3 py-1 md:py-1.5 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-[9px] md:text-[10px] uppercase tracking-wider flex items-center gap-1"
+                  className="px-2 md:px-3 py-1 md:py-1.5 bg-gray-400/10 border border-gray-400/20 rounded-full text-gray-300 text-[9px] md:text-[10px] uppercase tracking-wider flex items-center gap-1"
                 >
                   <svg className="w-2.5 h-2.5 md:w-3 md:h-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -194,12 +194,12 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="flex-1 bg-white/5 border border-white/10 rounded-xl sm:rounded-l-xl sm:rounded-r-none px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-amber-500/50 transition-colors text-sm"
+                  className="flex-1 bg-white/5 border border-white/10 rounded-xl sm:rounded-l-xl sm:rounded-r-none px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/50 transition-colors text-sm"
                   required
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold rounded-xl sm:rounded-l-none sm:rounded-r-xl hover:from-amber-400 hover:to-orange-400 transition-all flex items-center justify-center gap-2"
+                  className="px-6 py-3 bg-gradient-to-r from-white to-gray-300 text-black font-bold rounded-xl sm:rounded-l-none sm:rounded-r-xl hover:from-gray-200 hover:to-gray-200 transition-all flex items-center justify-center gap-2"
                 >
                   {isSubscribed ? (
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -213,7 +213,7 @@ const Footer = () => {
                 </button>
               </div>
               {isSubscribed && (
-                <p className="mt-2 text-green-400 text-sm flex items-center gap-2">
+                <p className="mt-2 text-gray-300 text-sm flex items-center gap-2">
                   <span>🎉</span> Welcome to the club!
                 </p>
               )}
@@ -246,7 +246,7 @@ const Footer = () => {
           {/* Live Locations */}
           <div className="md:col-span-2 lg:col-span-1">
             <h3 className="text-white font-bold text-base md:text-lg mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-500 rounded-full" />
+              <span className="w-2 h-2 bg-gray-400 rounded-full" />
               Live Locations
             </h3>
             <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 md:gap-3">
@@ -256,8 +256,8 @@ const Footer = () => {
                   className="flex items-center justify-between p-2.5 md:p-3 bg-white/[0.02] border border-white/5 rounded-lg md:rounded-xl hover:border-white/10 transition-colors"
                 >
                   <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-7 h-7 md:w-8 md:h-8 bg-amber-500/10 rounded-lg flex items-center justify-center">
-                      <svg className="w-3.5 h-3.5 md:w-4 md:h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-white/10 rounded-lg flex items-center justify-center">
+                      <svg className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
@@ -267,7 +267,7 @@ const Footer = () => {
                       <p className="text-gray-600 text-[10px] md:text-xs">{loc.time}</p>
                     </div>
                   </div>
-                  <span className="px-2 py-0.5 md:py-1 bg-green-500/10 text-green-400 text-[9px] md:text-[10px] uppercase tracking-wider rounded-full border border-green-500/20">
+                  <span className="px-2 py-0.5 md:py-1 bg-gray-400/10 text-gray-300 text-[9px] md:text-[10px] uppercase tracking-wider rounded-full border border-gray-400/20">
                     {loc.status}
                   </span>
                 </div>
@@ -275,9 +275,9 @@ const Footer = () => {
             </div>
             
             {/* Live Clock - Updates every minute now */}
-            <div className="mt-4 p-3 md:p-4 bg-gradient-to-r from-amber-500/5 to-orange-500/5 border border-amber-500/10 rounded-xl">
+            <div className="mt-4 p-3 md:p-4 bg-gradient-to-r from-white/5 to-gray-300/5 border border-white/10 rounded-xl">
               <p className="text-gray-600 text-[10px] md:text-xs uppercase tracking-wider mb-1">Current Time (IST)</p>
-              <p className="text-xl md:text-2xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
+              <p className="text-xl md:text-2xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-300">
                 {currentTime.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true })}
               </p>
             </div>
@@ -306,13 +306,13 @@ const Footer = () => {
           ].map((section) => (
             <div key={section.title}>
               <h3 className="text-white font-bold text-sm md:text-base mb-4 md:mb-6 flex items-center gap-2">
-                <span className="w-4 md:w-6 h-[2px] bg-gradient-to-r from-amber-500 to-orange-500" />
+                <span className="w-4 md:w-6 h-[2px] bg-gradient-to-r from-white to-gray-300" />
                 {section.title}
               </h3>
               <ul className="space-y-2 md:space-y-3">
                 {section.links.map((item) => (
                   <li key={item}>
-                    <a href="#" className="text-gray-500 hover:text-amber-500 transition-colors text-xs md:text-sm">
+                    <a href="#" className="text-gray-500 hover:text-white transition-colors text-xs md:text-sm">
                       {item}
                     </a>
                   </li>
@@ -325,7 +325,7 @@ const Footer = () => {
         {/* Contact Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-12 md:mb-16">
           {/* Visit Card */}
-          <div className="p-4 md:p-6 bg-white/[0.02] border border-white/10 rounded-xl md:rounded-2xl hover:border-amber-500/30 transition-all">
+          <div className="p-4 md:p-6 bg-white/[0.02] border border-white/10 rounded-xl md:rounded-2xl hover:border-white/30 transition-all">
             <span className="text-2xl md:text-3xl mb-2 md:mb-3 block">📍</span>
             <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-wider">Visit Us</p>
             <p className="text-white font-semibold text-sm md:text-base mt-1">Beverly Hills, CA 90210</p>
@@ -335,28 +335,28 @@ const Footer = () => {
           {/* Email Card */}
           <a
             href="mailto:ashusinghby2006@gmail.com"
-            className="p-4 md:p-6 bg-white/[0.02] border border-white/10 rounded-xl md:rounded-2xl hover:border-amber-500/30 transition-all group"
+            className="p-4 md:p-6 bg-white/[0.02] border border-white/10 rounded-xl md:rounded-2xl hover:border-white/30 transition-all group"
           >
             <span className="text-2xl md:text-3xl mb-2 md:mb-3 block">📧</span>
             <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-wider">Email Us</p>
-            <p className="text-white font-semibold text-sm md:text-base mt-1 group-hover:text-amber-400 transition-colors break-all">ashusinghby2006@gmail.com</p>
+            <p className="text-white font-semibold text-sm md:text-base mt-1 group-hover:text-gray-200 transition-colors break-all">ashusinghby2006@gmail.com</p>
             <p className="text-gray-600 text-[10px] md:text-xs mt-1">Click to send email</p>
           </a>
 
           {/* Phone Card */}
           <a
             href="tel:+917761966639"
-            className="p-4 md:p-6 bg-white/[0.02] border border-white/10 rounded-xl md:rounded-2xl hover:border-amber-500/30 transition-all group"
+            className="p-4 md:p-6 bg-white/[0.02] border border-white/10 rounded-xl md:rounded-2xl hover:border-white/30 transition-all group"
           >
             <span className="text-2xl md:text-3xl mb-2 md:mb-3 block">📞</span>
             <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-wider">Call Us</p>
-            <p className="text-white font-semibold text-sm md:text-base mt-1 group-hover:text-amber-400 transition-colors">+91 7761966639</p>
+            <p className="text-white font-semibold text-sm md:text-base mt-1 group-hover:text-gray-200 transition-colors">+91 7761966639</p>
             <p className="text-gray-600 text-[10px] md:text-xs mt-1">Click to call now</p>
           </a>
         </div>
 
         {/* App Download Section */}
-        <div className="relative mb-12 md:mb-16 p-6 md:p-8 rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-red-500/10">
+        <div className="relative mb-12 md:mb-16 p-6 md:p-8 rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-r from-white/10 via-gray-300/10 to-gray-400/10">
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
             <div className="text-center md:text-left">
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Download Our App</h3>
@@ -398,7 +398,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="flex flex-col sm:flex-row items-center gap-2 md:gap-4 text-center sm:text-left">
               <p className="text-gray-600 text-xs md:text-sm">
-                © {new Date().getFullYear()} <span className="text-white font-semibold">Rento</span><span className="text-amber-500 font-semibold">Car</span>. All rights reserved.
+                © {new Date().getFullYear()} <span className="text-white font-semibold">Rento</span><span className="text-white font-semibold">Car</span>. All rights reserved.
               </p>
               <span className="hidden sm:block w-px h-4 bg-white/10" />
               <p className="text-gray-700 text-[10px] md:text-xs">Made with ❤️ in India</p>
@@ -422,7 +422,7 @@ const Footer = () => {
             {/* Back to Top */}
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center gap-2 text-gray-500 hover:text-amber-500 transition-colors text-xs md:text-sm px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-white/10 hover:border-amber-500/30 hover:bg-amber-500/10"
+              className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-xs md:text-sm px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-white/10 hover:border-white/30 hover:bg-white/10"
             >
               <span className="font-medium">Back to Top</span>
               <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -437,7 +437,7 @@ const Footer = () => {
               <a 
                 key={item} 
                 href="#" 
-                className="text-gray-600 text-[10px] md:text-xs hover:text-amber-500 transition-colors"
+                className="text-gray-600 text-[10px] md:text-xs hover:text-white transition-colors"
               >
                 {item}
               </a>
@@ -453,13 +453,13 @@ const Footer = () => {
 
       {/* Static corner accents */}
       <div className="absolute bottom-0 left-0 pointer-events-none hidden md:block">
-        <div className="absolute bottom-0 left-0 w-px h-20 bg-gradient-to-t from-amber-500/50 to-transparent" />
-        <div className="absolute bottom-0 left-0 h-px w-20 bg-gradient-to-r from-amber-500/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-px h-20 bg-gradient-to-t from-white/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 h-px w-20 bg-gradient-to-r from-white/50 to-transparent" />
       </div>
 
       <div className="absolute bottom-0 right-0 pointer-events-none hidden md:block">
-        <div className="absolute bottom-0 right-0 w-px h-20 bg-gradient-to-t from-orange-500/50 to-transparent" />
-        <div className="absolute bottom-0 right-0 h-px w-20 bg-gradient-to-l from-orange-500/50 to-transparent" />
+        <div className="absolute bottom-0 right-0 w-px h-20 bg-gradient-to-t from-gray-300/50 to-transparent" />
+        <div className="absolute bottom-0 right-0 h-px w-20 bg-gradient-to-l from-gray-300/50 to-transparent" />
       </div>
     </footer>
   );

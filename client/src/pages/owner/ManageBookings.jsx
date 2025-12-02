@@ -68,17 +68,17 @@ const TiltCard = ({ children, className = "", intensity = 10 }) => {
 const GlowingOrbs = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
     <motion.div 
-      className="absolute -top-40 -right-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"
+      className="absolute -top-40 -right-40 w-96 h-96 bg-gray-400/10 rounded-full blur-3xl"
       animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
       transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
     />
     <motion.div 
-      className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+      className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-400/10 rounded-full blur-3xl"
       animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
       transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
     />
     <motion.div 
-      className="absolute top-1/3 left-1/3 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl"
+      className="absolute top-1/3 left-1/3 w-72 h-72 bg-gray-400/5 rounded-full blur-3xl"
       animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
     />
@@ -103,30 +103,30 @@ const SkeletonRow = () => (
 const statusConfig = {
   pending: {
     color: 'amber',
-    bg: 'bg-amber-500/10',
-    border: 'border-amber-500/30',
-    text: 'text-amber-400',
-    icon: '⏳',
+    bg: 'bg-white/10',
+    border: 'border-white/30',
+    text: 'text-gray-200',
+    icon: 'clock',
     label: 'Pending',
-    glow: 'shadow-amber-500/20'
+    glow: 'shadow-white/20'
   },
   confirmed: {
     color: 'emerald',
-    bg: 'bg-emerald-500/10',
-    border: 'border-emerald-500/30',
-    text: 'text-emerald-400',
-    icon: '✅',
+    bg: 'bg-gray-400/10',
+    border: 'border-gray-400/30',
+    text: 'text-gray-300',
+    icon: 'check',
     label: 'Confirmed',
-    glow: 'shadow-emerald-500/20'
+    glow: 'shadow-gray-400/20'
   },
   cancelled: {
     color: 'red',
-    bg: 'bg-red-500/10',
-    border: 'border-red-500/30',
-    text: 'text-red-400',
-    icon: '❌',
+    bg: 'bg-gray-400/10',
+    border: 'border-gray-400/30',
+    text: 'text-gray-300',
+    icon: 'x',
     label: 'Cancelled',
-    glow: 'shadow-red-500/20'
+    glow: 'shadow-gray-400/20'
   }
 }
 
@@ -246,9 +246,9 @@ const ManageBookings = () => {
               transition={{ delay: 0.2 }}
             >
               <div className="relative">
-                <div className="h-14 w-1.5 bg-gradient-to-b from-emerald-400 via-teal-500 to-cyan-600 rounded-full" />
+                <div className="h-14 w-1.5 bg-gradient-to-b from-gray-300 via-gray-400 to-cyan-600 rounded-full" />
                 <motion.div
-                  className="absolute -top-1 -left-1 w-3.5 h-3.5 bg-emerald-400 rounded-full blur-sm"
+                  className="absolute -top-1 -left-1 w-3.5 h-3.5 bg-gray-300 rounded-full blur-sm"
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
@@ -289,8 +289,8 @@ const ManageBookings = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <div className="px-5 py-3 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-emerald-600/5 border border-emerald-500/20">
-              <p className="text-emerald-400 font-bold text-2xl">{currency}<AnimatedCounter value={stats.totalRevenue} /></p>
+            <div className="px-5 py-3 rounded-2xl bg-gradient-to-br from-gray-400/10 to-emerald-600/5 border border-gray-400/20">
+              <p className="text-gray-300 font-bold text-2xl">{currency}<AnimatedCounter value={stats.totalRevenue} /></p>
               <p className="text-gray-500 text-xs">Total Revenue</p>
             </div>
           </motion.div>
@@ -305,10 +305,10 @@ const ManageBookings = () => {
         className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-10 relative z-10"
       >
         {[
-          { label: 'Total Bookings', value: stats.total, icon: '📋', gradient: 'from-blue-600 via-blue-500 to-cyan-400', glow: 'shadow-blue-500/20' },
-          { label: 'Pending', value: stats.pending, icon: '⏳', gradient: 'from-amber-600 via-amber-500 to-yellow-400', glow: 'shadow-amber-500/20' },
-          { label: 'Confirmed', value: stats.confirmed, icon: '✅', gradient: 'from-emerald-600 via-emerald-500 to-green-400', glow: 'shadow-emerald-500/20' },
-          { label: 'Cancelled', value: stats.cancelled, icon: '❌', gradient: 'from-red-600 via-red-500 to-orange-400', glow: 'shadow-red-500/20' },
+          { label: 'Total Bookings', value: stats.total, icon: 'clipboard', gradient: 'from-gray-500 via-gray-400 to-gray-300', glow: 'shadow-gray-400/20' },
+          { label: 'Pending', value: stats.pending, icon: 'clock', gradient: 'from-gray-300 via-white to-gray-300', glow: 'shadow-white/20' },
+          { label: 'Confirmed', value: stats.confirmed, icon: 'check', gradient: 'from-emerald-600 via-gray-400 to-gray-300', glow: 'shadow-gray-400/20' },
+          { label: 'Cancelled', value: stats.cancelled, icon: 'x', gradient: 'from-gray-500 via-gray-400 to-gray-200', glow: 'shadow-gray-400/20' },
         ].map((stat, index) => (
           <TiltCard key={stat.label} intensity={8}>
             <motion.div
@@ -324,13 +324,16 @@ const ManageBookings = () => {
                 className="relative z-10"
                 style={{ transform: "translateZ(30px)" }}
               >
-                <motion.span 
-                  className="text-4xl block mb-2"
+                <motion.div 
+                  className="w-10 h-10 mb-2 flex items-center justify-center"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  {stat.icon}
-                </motion.span>
+                  {stat.icon === 'clipboard' && <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>}
+                  {stat.icon === 'clock' && <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
+                  {stat.icon === 'check' && <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
+                  {stat.icon === 'x' && <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
+                </motion.div>
                 <p className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
                   <AnimatedCounter value={stat.value} />
                 </p>
@@ -377,9 +380,9 @@ const ManageBookings = () => {
                     layoutId="activeTab"
                     className={`absolute inset-0 rounded-xl ${
                       tab.key === 'all' ? 'bg-white' :
-                      tab.key === 'pending' ? 'bg-gradient-to-r from-amber-400 to-amber-500' :
-                      tab.key === 'confirmed' ? 'bg-gradient-to-r from-emerald-400 to-emerald-500' :
-                      'bg-gradient-to-r from-red-400 to-red-500'
+                      tab.key === 'pending' ? 'bg-gradient-to-r from-gray-200 to-white' :
+                      tab.key === 'confirmed' ? 'bg-gradient-to-r from-gray-300 to-gray-400' :
+                      'bg-gradient-to-r from-gray-300 to-gray-400'
                     }`}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
@@ -398,7 +401,7 @@ const ManageBookings = () => {
 
           {/* Search */}
           <div className="flex-1 relative group">
-            <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-emerald-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <input
@@ -406,7 +409,7 @@ const ManageBookings = () => {
               placeholder="Search by car or customer name..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all"
+              className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:border-gray-400/50 focus:ring-2 focus:ring-gray-400/20 outline-none transition-all"
             />
           </div>
 
@@ -415,12 +418,12 @@ const ManageBookings = () => {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="appearance-none px-5 py-4 pr-12 bg-white/5 border border-white/10 rounded-xl text-white focus:border-emerald-500/50 outline-none transition-all cursor-pointer hover:bg-white/10"
+              className="appearance-none px-5 py-4 pr-12 bg-white/5 border border-white/10 rounded-xl text-white focus:border-gray-400/50 outline-none transition-all cursor-pointer hover:bg-white/10"
             >
-              <option value="newest" className="bg-zinc-900">🆕 Newest First</option>
-              <option value="oldest" className="bg-zinc-900">📜 Oldest First</option>
-              <option value="amount-high" className="bg-zinc-900">💰 Amount: High → Low</option>
-              <option value="amount-low" className="bg-zinc-900">💵 Amount: Low → High</option>
+              <option value="newest" className="bg-zinc-900">Newest First</option>
+              <option value="oldest" className="bg-zinc-900">Oldest First</option>
+              <option value="amount-high" className="bg-zinc-900">Amount: High → Low</option>
+              <option value="amount-low" className="bg-zinc-900">Amount: Low → High</option>
             </select>
             <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -443,7 +446,7 @@ const ManageBookings = () => {
           onClick={fetchBookings}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-emerald-400 text-sm transition-all"
+          className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-gray-300 text-sm transition-all"
         >
           <motion.svg 
             className="w-4 h-4" 
@@ -475,7 +478,9 @@ const ManageBookings = () => {
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span className="text-6xl">📋</span>
+            <svg className="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+            </svg>
           </motion.div>
           <h3 className="text-2xl font-bold text-white mb-3">No Bookings Found</h3>
           <p className="text-gray-500 max-w-md mx-auto">
@@ -520,7 +525,7 @@ const ManageBookings = () => {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                         </motion.div>
                         <div>
-                          <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
+                          <h3 className="text-lg font-bold text-white group-hover:text-gray-300 transition-colors">
                             {booking.car?.brand} {booking.car?.model}
                           </h3>
                           <p className="text-gray-500 text-sm flex items-center gap-2 mt-1">
@@ -533,7 +538,7 @@ const ManageBookings = () => {
 
                       {/* Customer Info */}
                       <div className="flex items-center gap-3 min-w-[200px]">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-sm">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-400 to-teal-600 flex items-center justify-center text-white font-bold text-sm">
                           {booking.user?.name?.charAt(0) || 'U'}
                         </div>
                         <div>
@@ -560,7 +565,7 @@ const ManageBookings = () => {
                         {/* Amount */}
                         <div className="text-center min-w-[100px]">
                           <p className="text-gray-500 text-xs uppercase tracking-wide mb-1">Amount</p>
-                          <p className="text-amber-400 font-bold text-xl">{currency}{booking.totalPrice}</p>
+                          <p className="text-gray-200 font-bold text-xl">{currency}{booking.totalPrice}</p>
                         </div>
 
                         {/* Status Badge */}
@@ -587,7 +592,7 @@ const ManageBookings = () => {
                               disabled={actionLoading === booking._id}
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.95 }}
-                              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold hover:shadow-lg hover:shadow-emerald-500/25 transition-all disabled:opacity-50"
+                              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-gray-400 to-emerald-600 text-white font-semibold hover:shadow-lg hover:shadow-gray-400/25 transition-all disabled:opacity-50"
                             >
                               {actionLoading === booking._id ? (
                                 <motion.div 
@@ -609,7 +614,7 @@ const ManageBookings = () => {
                               disabled={actionLoading === booking._id}
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.95 }}
-                              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 font-semibold hover:bg-red-500/20 transition-all disabled:opacity-50"
+                              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-400/10 border border-gray-400/30 text-gray-300 font-semibold hover:bg-gray-400/20 transition-all disabled:opacity-50"
                             >
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -697,7 +702,7 @@ const ManageBookings = () => {
                 <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
                   <p className="text-gray-500 text-xs uppercase tracking-wide mb-3">Customer Details</p>
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-lg">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-400 to-teal-600 flex items-center justify-center text-white font-bold text-lg">
                       {selectedBooking.user?.name?.charAt(0)}
                     </div>
                     <div>
@@ -720,7 +725,7 @@ const ManageBookings = () => {
                 </div>
 
                 {/* Total */}
-                <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20">
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-white/10 to-gray-300/10 border border-white/20">
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="text-gray-400 text-sm">Total Amount</p>
@@ -728,7 +733,7 @@ const ManageBookings = () => {
                         {getDaysCount(selectedBooking.fromDate, selectedBooking.toDate)} days × {currency}{selectedBooking.car?.pricePerDay}/day
                       </p>
                     </div>
-                    <p className="text-amber-400 font-bold text-3xl">{currency}{selectedBooking.totalPrice}</p>
+                    <p className="text-gray-200 font-bold text-3xl">{currency}{selectedBooking.totalPrice}</p>
                   </div>
                 </div>
 
@@ -739,17 +744,19 @@ const ManageBookings = () => {
                       onClick={() => { changeStatus(selectedBooking._id, 'confirmed'); setShowDetailModal(false); }}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex-1 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold hover:shadow-lg hover:shadow-emerald-500/25 transition-all"
+                      className="flex-1 py-4 rounded-xl bg-gradient-to-r from-gray-400 to-emerald-600 text-white font-semibold hover:shadow-lg hover:shadow-gray-400/25 transition-all flex items-center justify-center gap-2"
                     >
-                      ✅ Confirm Booking
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                      Confirm Booking
                     </motion.button>
                     <motion.button
                       onClick={() => { changeStatus(selectedBooking._id, 'cancelled'); setShowDetailModal(false); }}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex-1 py-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 font-semibold hover:bg-red-500/20 transition-all"
+                      className="flex-1 py-4 rounded-xl bg-gray-400/10 border border-gray-400/30 text-gray-300 font-semibold hover:bg-gray-400/20 transition-all flex items-center justify-center gap-2"
                     >
-                      ❌ Decline
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                      Decline
                     </motion.button>
                   </div>
                 )}

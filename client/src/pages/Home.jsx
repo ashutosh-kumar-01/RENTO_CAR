@@ -12,7 +12,7 @@ const Newsletter = lazy(() => import('../components/Newsletter'))
 // Simple loading placeholder
 const SectionLoader = () => (
   <div className="min-h-[50vh] bg-black flex items-center justify-center">
-    <div className="w-8 h-8 border-2 border-amber-500 border-t-transparent rounded-full animate-spin"></div>
+    <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
   </div>
 )
 
@@ -38,7 +38,7 @@ const Home = () => {
     <div ref={containerRef} className="relative">
       {/* Scroll Progress Bar */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 origin-left z-[100] will-change-transform"
+        className="fixed top-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-white via-gray-300 to-gray-400 origin-left z-[100] will-change-transform"
         style={{ scaleX }}
       />
       
@@ -57,7 +57,7 @@ const Home = () => {
               <span className="text-[10px] sm:text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                 {section}
               </span>
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gray-700 group-hover:bg-amber-500 group-hover:scale-125 transition-all duration-200" />
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gray-700 group-hover:bg-white group-hover:scale-125 transition-all duration-200" />
             </div>
           ))}
         </div>

@@ -70,7 +70,7 @@ const TiltCard = ({ children, className = '' }) => {
 // Minimal Ambient Background
 const AmbientBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-amber-500/5 to-transparent rounded-full blur-3xl" />
+    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-white/5 to-transparent rounded-full blur-3xl" />
     <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-neutral-500/5 to-transparent rounded-full blur-3xl" />
     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:50px_50px]" />
   </div>
@@ -79,9 +79,9 @@ const AmbientBackground = () => (
 // Status Badge Component
 const StatusBadge = ({ status }) => {
   const styles = {
-    pending: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-    confirmed: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-    cancelled: 'bg-red-500/10 text-red-400 border-red-500/20'
+    pending: 'bg-white/10 text-gray-200 border-white/20',
+    confirmed: 'bg-gray-400/10 text-gray-300 border-gray-400/20',
+    cancelled: 'bg-gray-400/10 text-gray-300 border-gray-400/20'
   }
   
   return (
@@ -166,7 +166,7 @@ const Dashboard = () => {
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
             >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-amber-500 rounded-full" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rounded-full" />
             </motion.div>
           </div>
           <p className="text-neutral-500 text-sm font-medium">Loading dashboard...</p>
@@ -236,7 +236,7 @@ const Dashboard = () => {
                 {getGreeting()}
               </motion.p>
               <h1 className="text-3xl md:text-4xl font-bold text-white">
-                Welcome back, <span className="text-amber-500">{user?.name?.split(' ')[0] || 'Owner'}</span>
+                Welcome back, <span className="text-white">{user?.name?.split(' ')[0] || 'Owner'}</span>
               </h1>
               <p className="text-neutral-500 mt-2 text-sm">
                 {currentTime.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
@@ -256,7 +256,7 @@ const Dashboard = () => {
               
               <Link to="/owner/add-car">
                 <motion.button
-                  className="flex items-center gap-2 px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-black rounded-xl transition-all duration-200 font-medium"
+                  className="flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-gray-200 text-black rounded-xl transition-all duration-200 font-medium"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -289,7 +289,7 @@ const Dashboard = () => {
                     <stat.icon className={`w-5 h-5 text-neutral-400 group-hover:text-${stat.accent}-400 transition-colors duration-300`} />
                   </div>
                   <div className="flex items-center gap-1 text-xs text-neutral-500">
-                    <span className="text-amber-500 font-medium">{stat.change}</span>
+                    <span className="text-white font-medium">{stat.change}</span>
                     <span>{stat.changeLabel}</span>
                   </div>
                 </div>
@@ -316,8 +316,8 @@ const Dashboard = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="bg-neutral-900/30 rounded-xl p-4 border border-neutral-800/30 flex items-center gap-4">
-            <div className="p-2 rounded-lg bg-emerald-500/10">
-              <FiCheck className="w-4 h-4 text-emerald-400" />
+            <div className="p-2 rounded-lg bg-gray-400/10">
+              <FiCheck className="w-4 h-4 text-gray-300" />
             </div>
             <div>
               <p className="text-xs text-neutral-500">Confirmed</p>
@@ -326,8 +326,8 @@ const Dashboard = () => {
           </div>
           
           <div className="bg-neutral-900/30 rounded-xl p-4 border border-neutral-800/30 flex items-center gap-4">
-            <div className="p-2 rounded-lg bg-amber-500/10">
-              <FiClock className="w-4 h-4 text-amber-400" />
+            <div className="p-2 rounded-lg bg-white/10">
+              <FiClock className="w-4 h-4 text-gray-200" />
             </div>
             <div>
               <p className="text-xs text-neutral-500">Pending</p>
@@ -336,8 +336,8 @@ const Dashboard = () => {
           </div>
           
           <div className="bg-neutral-900/30 rounded-xl p-4 border border-neutral-800/30 flex items-center gap-4">
-            <div className="p-2 rounded-lg bg-red-500/10">
-              <FiX className="w-4 h-4 text-red-400" />
+            <div className="p-2 rounded-lg bg-gray-400/10">
+              <FiX className="w-4 h-4 text-gray-300" />
             </div>
             <div>
               <p className="text-xs text-neutral-500">Cancelled</p>
@@ -346,8 +346,8 @@ const Dashboard = () => {
           </div>
           
           <div className="bg-neutral-900/30 rounded-xl p-4 border border-neutral-800/30 flex items-center gap-4">
-            <div className="p-2 rounded-lg bg-blue-500/10">
-              <FiActivity className="w-4 h-4 text-blue-400" />
+            <div className="p-2 rounded-lg bg-gray-400/10">
+              <FiActivity className="w-4 h-4 text-gray-300" />
             </div>
             <div>
               <p className="text-xs text-neutral-500">Availability</p>
@@ -365,8 +365,8 @@ const Dashboard = () => {
         >
           <div className="px-6 py-4 border-b border-neutral-800/50 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-amber-500/10">
-                <FiPackage className="w-4 h-4 text-amber-400" />
+              <div className="p-2 rounded-lg bg-white/10">
+                <FiPackage className="w-4 h-4 text-gray-200" />
               </div>
               <div>
                 <h2 className="text-lg font-semibold text-white">Recent Bookings</h2>
@@ -376,7 +376,7 @@ const Dashboard = () => {
             
             <Link to="/owner/manage-bookings">
               <motion.button
-                className="flex items-center gap-1 text-sm text-amber-500 hover:text-amber-400 transition-colors"
+                className="flex items-center gap-1 text-sm text-white hover:text-gray-200 transition-colors"
                 whileHover={{ x: 2 }}
               >
                 View All
@@ -433,7 +433,7 @@ const Dashboard = () => {
                               <FiCalendar className="w-3.5 h-3.5" />
                               <span>{formatDate(booking.pickupDate)} - {formatDate(booking.returnDate)}</span>
                             </div>
-                            <div className="flex items-center gap-1 text-amber-500 font-medium">
+                            <div className="flex items-center gap-1 text-white font-medium">
                               <FiDollarSign className="w-3.5 h-3.5" />
                               <span>{currency}{booking.price?.toLocaleString()}</span>
                             </div>
@@ -442,7 +442,7 @@ const Dashboard = () => {
                       </div>
                       
                       {/* Hover indicator */}
-                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-8 bg-amber-500 rounded-r transition-all duration-200" />
+                      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-8 bg-white rounded-r transition-all duration-200" />
                     </motion.div>
                   ))}
                 </AnimatePresence>
@@ -464,7 +464,7 @@ const Dashboard = () => {
                 </p>
                 <Link to={dashboardData?.totalCars > 0 ? "/owner/manage-bookings" : "/owner/add-car"}>
                   <motion.button
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-black rounded-xl font-medium text-sm transition-colors"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-gray-200 text-black rounded-xl font-medium text-sm transition-colors"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -489,14 +489,14 @@ const Dashboard = () => {
         {/* Quick Actions (shown only if no cars) */}
         {dashboardData?.totalCars === 0 && (
           <motion.div
-            className="mt-6 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-2xl p-6 border border-amber-500/20"
+            className="mt-6 bg-gradient-to-r from-white/10 to-gray-300/10 rounded-2xl p-6 border border-white/20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <div className="flex flex-col md:flex-row items-center gap-4">
-              <div className="p-3 rounded-xl bg-amber-500/20">
-                <FiAlertCircle className="w-6 h-6 text-amber-400" />
+              <div className="p-3 rounded-xl bg-white/20">
+                <FiAlertCircle className="w-6 h-6 text-gray-200" />
               </div>
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-white font-semibold mb-1">Get Started with Your Fleet</h3>
@@ -506,7 +506,7 @@ const Dashboard = () => {
               </div>
               <Link to="/owner/add-car">
                 <motion.button
-                  className="flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-400 text-black rounded-xl font-medium transition-colors whitespace-nowrap"
+                  className="flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-200 text-black rounded-xl font-medium transition-colors whitespace-nowrap"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

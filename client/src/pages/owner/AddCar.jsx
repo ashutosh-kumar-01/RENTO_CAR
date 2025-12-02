@@ -88,12 +88,12 @@ const AddCar = () => {
         {/* car image */}
         <div className="flex flex-col gap-3 w-full">
           <label className="font-medium text-gray-300 flex items-center gap-2">
-            <svg className="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
             Car Image
           </label>
-          <label htmlFor="car-image" className="w-full h-52 border-2 border-dashed border-white/20 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-white/5 hover:border-amber-500/50 transition-all bg-white/5 group overflow-hidden">
+          <label htmlFor="car-image" className="w-full h-52 border-2 border-dashed border-white/20 rounded-2xl flex flex-col items-center justify-center cursor-pointer hover:bg-white/5 hover:border-white/50 transition-all bg-white/5 group overflow-hidden">
             {image ? (
               <img
                 src={URL.createObjectURL(image)}
@@ -101,8 +101,8 @@ const AddCar = () => {
                 className="h-full w-full object-contain rounded-xl"
               />
             ) : (
-              <div className="flex flex-col items-center gap-3 text-gray-500 group-hover:text-amber-400 transition-colors">
-                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-amber-500/10">
+              <div className="flex flex-col items-center gap-3 text-gray-500 group-hover:text-gray-200 transition-colors">
+                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10">
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                   </svg>
@@ -128,7 +128,7 @@ const AddCar = () => {
             <input
               onChange={(e) => setCar({ ...car, brand: e.target.value })}
               value={car.brand}
-              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all text-white placeholder:text-gray-600"
+              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-white/30 focus:border-white transition-all text-white placeholder:text-gray-600"
               type="text"
               list="brand-list"
               placeholder="e.g. Toyota"
@@ -143,7 +143,7 @@ const AddCar = () => {
             <input
               onChange={(e) => setCar({ ...car, model: e.target.value })}
               value={car.model}
-              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all text-white placeholder:text-gray-600"
+              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-white/30 focus:border-white transition-all text-white placeholder:text-gray-600"
               type="text"
               placeholder="e.g. Camry"
               required
@@ -157,7 +157,7 @@ const AddCar = () => {
             <input
               onChange={(e) => setCar({ ...car, year: e.target.value })}
               value={car.year}
-              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all text-white placeholder:text-gray-600"
+              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-white/30 focus:border-white transition-all text-white placeholder:text-gray-600"
               type="number"
               min="2000"
               max="2025"
@@ -170,7 +170,7 @@ const AddCar = () => {
             <input
               onChange={(e) => setCar({ ...car, pricePerDay: e.target.value })}
               value={car.pricePerDay}
-              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all text-white placeholder:text-gray-600"
+              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-white/30 focus:border-white transition-all text-white placeholder:text-gray-600"
               type="number"
               min="100"
               placeholder="e.g. 2500"
@@ -182,7 +182,7 @@ const AddCar = () => {
             <select
               onChange={(e) => setCar({ ...car, category: e.target.value })}
               value={car.category}
-              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all text-white"
+              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-white/30 focus:border-white transition-all text-white"
               required
             >
               <option value="" className="bg-zinc-900">Select Category</option>
@@ -210,7 +210,7 @@ const AddCar = () => {
             <select
               onChange={(e) => setCar({ ...car, transmission: e.target.value })}
               value={car.transmission}
-              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all text-white"
+              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-white/30 focus:border-white transition-all text-white"
               required
             >
               <option value="" className="bg-zinc-900">Select</option>
@@ -225,7 +225,7 @@ const AddCar = () => {
             <select
               onChange={(e) => setCar({ ...car, fuel_type: e.target.value })}
               value={car.fuel_type}
-              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all text-white"
+              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-white/30 focus:border-white transition-all text-white"
               required
             >
               <option value="" className="bg-zinc-900">Select</option>
@@ -241,7 +241,7 @@ const AddCar = () => {
             <select
               onChange={(e) => setCar({ ...car, seating_capacity: e.target.value })}
               value={car.seating_capacity}
-              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all text-white"
+              className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-white/30 focus:border-white transition-all text-white"
               required
             >
               <option value="" className="bg-zinc-900">Select</option>
@@ -260,7 +260,7 @@ const AddCar = () => {
           <input
             onChange={(e) => setCar({ ...car, location: e.target.value })}
             value={car.location}
-            className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all text-white placeholder:text-gray-600"
+            className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-white/30 focus:border-white transition-all text-white placeholder:text-gray-600"
             type="text"
             list="location-list"
             placeholder="City, State"
@@ -276,15 +276,15 @@ const AddCar = () => {
           <textarea
             onChange={(e) => setCar({ ...car, description: e.target.value })}
             value={car.description}
-            className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all h-32 resize-none text-white placeholder:text-gray-600"
+            className="border border-white/10 bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-white/30 focus:border-white transition-all h-32 resize-none text-white placeholder:text-gray-600"
             placeholder="Describe your car's features, condition, special highlights..."
             required
           />
         </div>
 
         {/* Quick Tips */}
-        <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4">
-          <h4 className="text-amber-400 font-medium mb-2 flex items-center gap-2">
+        <div className="bg-white/10 border border-white/20 rounded-xl p-4">
+          <h4 className="text-gray-200 font-medium mb-2 flex items-center gap-2">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
             </svg>
@@ -300,7 +300,7 @@ const AddCar = () => {
 
         <button 
           disabled={isLoading}
-          className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-black font-semibold py-4 rounded-xl transition-all mt-2 disabled:from-gray-700 disabled:to-gray-700 disabled:text-gray-500 disabled:cursor-not-allowed shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 flex items-center justify-center gap-2"
+          className="bg-gradient-to-r from-white to-gray-400 hover:from-gray-200 hover:to-gray-300 text-black font-semibold py-4 rounded-xl transition-all mt-2 disabled:from-gray-700 disabled:to-gray-700 disabled:text-gray-500 disabled:cursor-not-allowed shadow-lg shadow-white/20 hover:shadow-white/40 flex items-center justify-center gap-2"
         >
           {isLoading ? (
             <>

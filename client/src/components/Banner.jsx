@@ -76,7 +76,7 @@ const Banner = () => {
     delay: i * 0.3,
     duration: 8 + Math.random() * 8,
     size: Math.random() > 0.7 ? 'w-1.5 h-1.5' : 'w-1 h-1',
-    color: i % 3 === 0 ? 'bg-amber-400' : i % 3 === 1 ? 'bg-orange-400' : 'bg-white'
+    color: i % 3 === 0 ? 'bg-gray-200' : i % 3 === 1 ? 'bg-gray-200' : 'bg-white'
   }));
 
   return (
@@ -107,14 +107,14 @@ const Banner = () => {
           scale,
           x: useTransform(mouseXSpring, [-30, 30], [-20, 20]),
         }}
-        className="absolute top-1/4 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-amber-500/10 rounded-full blur-[100px] md:blur-[150px] pointer-events-none z-[1]" 
+        className="absolute top-1/4 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-white/10 rounded-full blur-[100px] md:blur-[150px] pointer-events-none z-[1]" 
       />
       <motion.div 
         style={{ 
           y: useTransform(scrollYProgress, [0, 1], [-50, 50]),
           x: useTransform(mouseXSpring, [-30, 30], [15, -15]),
         }}
-        className="absolute bottom-1/4 left-1/3 w-[200px] md:w-[350px] h-[200px] md:h-[350px] bg-orange-600/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none z-[1]" 
+        className="absolute bottom-1/4 left-1/3 w-[200px] md:w-[350px] h-[200px] md:h-[350px] bg-gray-400/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none z-[1]" 
       />
       
       {/* Third orb for extra depth */}
@@ -123,7 +123,7 @@ const Banner = () => {
           y: useTransform(scrollYProgress, [0, 1], [30, -70]),
           x: useTransform(mouseYSpring, [-30, 30], [-25, 25]),
         }}
-        className="absolute top-1/2 right-1/3 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-red-600/5 rounded-full blur-[100px] md:blur-[130px] pointer-events-none z-[1]" 
+        className="absolute top-1/2 right-1/3 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-gray-500/5 rounded-full blur-[100px] md:blur-[130px] pointer-events-none z-[1]" 
       />
 
       {/* Floating Particles - Full 30 particles with complex animations */}
@@ -175,10 +175,10 @@ const Banner = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 rounded-full backdrop-blur-sm"
+              className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-white/10 to-gray-300/10 border border-white/30 rounded-full backdrop-blur-sm"
             >
-              <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-              <span className="text-amber-400 text-[10px] sm:text-xs font-semibold tracking-[0.15em] sm:tracking-[0.25em] uppercase">Exclusive Partnership</span>
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+              <span className="text-gray-200 text-[10px] sm:text-xs font-semibold tracking-[0.15em] sm:tracking-[0.25em] uppercase">Exclusive Partnership</span>
             </motion.div>
 
             {/* Main Heading */}
@@ -217,7 +217,7 @@ const Banner = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3, duration: 0.5 }}
-                  className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-red-500"
+                  className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400"
                 >
                   LUXURY
                 </motion.span>
@@ -242,10 +242,10 @@ const Banner = () => {
             >
               <p className='text-gray-400 text-base sm:text-lg md:text-xl leading-relaxed max-w-lg'>
                 Join the most <span className="text-white font-medium">exclusive network</span> of luxury car owners. 
-                Turn your premium vehicle into a <span className="text-amber-400 font-medium">passive income stream</span> while 
+                Turn your premium vehicle into a <span className="text-gray-200 font-medium">passive income stream</span> while 
                 maintaining complete control.
               </p>
-              <div className="h-[2px] w-[30%] bg-gradient-to-r from-amber-500 to-transparent mt-4 sm:mt-6" />
+              <div className="h-[2px] w-[30%] bg-gradient-to-r from-white to-transparent mt-4 sm:mt-6" />
             </motion.div>
 
             {/* Features Carousel */}
@@ -261,7 +261,7 @@ const Banner = () => {
                     key={index}
                     onClick={() => setActiveFeature(index)}
                     className={`h-1 rounded-full transition-all duration-300 ${
-                      index === activeFeature ? 'w-6 sm:w-8 bg-amber-500' : 'w-2 bg-gray-700 hover:bg-gray-600'
+                      index === activeFeature ? 'w-6 sm:w-8 bg-white' : 'w-2 bg-gray-700 hover:bg-gray-600'
                     }`}
                   />
                 ))}
@@ -276,7 +276,7 @@ const Banner = () => {
                   transition={{ duration: 0.25 }}
                   className="flex items-center gap-4 sm:gap-6 p-4 sm:p-6 bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/10"
                 >
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-amber-500/20 to-orange-600/20 rounded-lg sm:rounded-xl text-2xl sm:text-3xl">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-white/20 to-gray-400/20 rounded-lg sm:rounded-xl text-2xl sm:text-3xl">
                     {features[activeFeature].icon}
                   </div>
                   <div className="flex-1 min-w-0">
@@ -284,7 +284,7 @@ const Banner = () => {
                     <p className="text-gray-500 text-xs sm:text-sm truncate">{features[activeFeature].desc}</p>
                   </div>
                   <div className="text-right flex-shrink-0">
-                    <p className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
+                    <p className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-300">
                       {features[activeFeature].stat}
                     </p>
                   </div>
@@ -304,7 +304,7 @@ const Banner = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => { navigate('/owner/add-car'); scrollTo(0,0); }}
-                className='relative px-6 sm:px-10 py-4 sm:py-5 font-bold rounded-full overflow-hidden cursor-pointer bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 text-black uppercase tracking-wider text-sm sm:text-base flex items-center justify-center gap-2 sm:gap-3'
+                className='relative px-6 sm:px-10 py-4 sm:py-5 font-bold rounded-full overflow-hidden cursor-pointer bg-gradient-to-r from-white via-gray-300 to-white text-black uppercase tracking-wider text-sm sm:text-base flex items-center justify-center gap-2 sm:gap-3'
               >
                 List Your Car
                 <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -316,9 +316,9 @@ const Banner = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => setShowDemoModal(true)}
-                className="px-6 sm:px-8 py-4 sm:py-5 border border-white/20 rounded-full font-medium text-white hover:text-amber-400 hover:border-amber-500/50 transition-all flex items-center justify-center gap-2 sm:gap-3 backdrop-blur-sm text-sm sm:text-base"
+                className="px-6 sm:px-8 py-4 sm:py-5 border border-white/20 rounded-full font-medium text-white hover:text-gray-200 hover:border-white/50 transition-all flex items-center justify-center gap-2 sm:gap-3 backdrop-blur-sm text-sm sm:text-base"
               >
-                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-amber-500 rounded-full animate-pulse" />
+                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full animate-pulse" />
                 Watch Demo
               </motion.button>
             </motion.div>
@@ -333,7 +333,7 @@ const Banner = () => {
             className="relative hidden lg:block"
           >
             {/* Main Video Card */}
-            <div className="relative rounded-3xl overflow-hidden border border-amber-500/20 shadow-2xl shadow-amber-900/20">
+            <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl shadow-amber-900/20">
               <video 
                 autoPlay 
                 loop 
@@ -352,20 +352,20 @@ const Banner = () => {
               <div className="absolute bottom-0 left-0 right-0 p-4 xl:p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-amber-400 text-xs font-semibold tracking-widest uppercase mb-1">Luxury Experience</p>
+                    <p className="text-gray-200 text-xs font-semibold tracking-widest uppercase mb-1">Luxury Experience</p>
                     <p className="text-white text-xl xl:text-2xl font-bold">Premium Fleet</p>
                   </div>
                 </div>
                 
                 {/* Progress bar - CSS animation only */}
                 <div className="mt-3 xl:mt-4 h-1 bg-white/20 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-amber-500 to-orange-500 animate-progress-bar" />
+                  <div className="h-full bg-gradient-to-r from-white to-gray-300 animate-progress-bar" />
                 </div>
               </div>
 
               {/* LIVE badge */}
               <div className="absolute top-3 xl:top-4 right-3 xl:right-4 flex items-center gap-2 px-3 py-1.5 bg-black/50 backdrop-blur-sm rounded-full border border-white/10">
-                <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                <span className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></span>
                 <span className="text-white text-xs font-medium">LIVE</span>
               </div>
             </div>
@@ -376,10 +376,10 @@ const Banner = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
-              className="absolute -bottom-6 xl:-bottom-8 -left-4 xl:-left-8 p-3 xl:p-4 bg-black/80 backdrop-blur-xl rounded-xl xl:rounded-2xl border border-amber-500/30 shadow-xl"
+              className="absolute -bottom-6 xl:-bottom-8 -left-4 xl:-left-8 p-3 xl:p-4 bg-black/80 backdrop-blur-xl rounded-xl xl:rounded-2xl border border-white/30 shadow-xl"
             >
               <div className="flex items-center gap-2 xl:gap-3">
-                <div className="w-10 h-10 xl:w-12 xl:h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg xl:rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 xl:w-12 xl:h-12 bg-gradient-to-br from-white to-gray-400 rounded-lg xl:rounded-xl flex items-center justify-center">
                   <span className="text-xl xl:text-2xl">💰</span>
                 </div>
                 <div>
@@ -397,7 +397,7 @@ const Banner = () => {
               className="absolute -top-3 xl:-top-4 -right-2 xl:-right-4 p-3 xl:p-4 bg-black/80 backdrop-blur-xl rounded-xl xl:rounded-2xl border border-white/10 shadow-xl"
             >
               <div className="flex items-center gap-2">
-                <span className="text-amber-400 text-lg xl:text-xl">★</span>
+                <span className="text-gray-200 text-lg xl:text-xl">★</span>
                 <span className="text-white font-bold">4.9</span>
                 <span className="text-gray-500 text-xs xl:text-sm">(2.4k)</span>
               </div>
@@ -432,7 +432,7 @@ const Banner = () => {
                 >
                   <div className="flex items-baseline gap-1 justify-center">
                     <motion.span 
-                      className="text-5xl md:text-6xl font-black text-white group-hover:text-amber-400 transition-colors duration-300"
+                      className="text-5xl md:text-6xl font-black text-white group-hover:text-gray-200 transition-colors duration-300"
                       initial={{ scale: 0.8 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
@@ -440,13 +440,13 @@ const Banner = () => {
                     >
                       {spec.value}
                     </motion.span>
-                    <span className="text-2xl md:text-3xl font-bold text-amber-500">{spec.suffix}</span>
+                    <span className="text-2xl md:text-3xl font-bold text-white">{spec.suffix}</span>
                   </div>
                   <p className="text-gray-500 text-sm uppercase tracking-wider mt-2">{spec.label}</p>
                   
                   {/* Decorative line under each stat */}
                   <motion.div 
-                    className="h-[2px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="h-[2px] bg-gradient-to-r from-transparent via-white/50 to-transparent mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
                   />
@@ -472,7 +472,7 @@ const Banner = () => {
             onClick={() => setShowDemoModal(false)}
           >
             {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[500px] md:h-[800px] bg-amber-500/10 rounded-full blur-[100px] md:blur-[150px]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[500px] md:h-[800px] bg-white/10 rounded-full blur-[100px] md:blur-[150px]" />
 
             {/* Close Button */}
             <button
@@ -491,7 +491,7 @@ const Banner = () => {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-5xl aspect-video rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-amber-500/30 shadow-2xl"
+              className="relative w-full max-w-5xl aspect-video rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white/30 shadow-2xl"
             >
               <video
                 ref={demoVideoRef}

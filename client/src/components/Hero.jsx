@@ -49,12 +49,12 @@ const Hero = () => {
   }, [isMobile]);
 
   return (
-    <div ref={ref} className="min-h-screen flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative text-center px-4 sm:px-6 pt-16 sm:pt-20 overflow-hidden bg-black">
+    <div ref={ref} className="min-h-screen flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10 relative text-center px-4 sm:px-6 pt-16 sm:pt-20 overflow-visible">
       
       {/* Background Video - Optimized with lazy loading */}
       <motion.div 
         style={{ scale: videoScale, opacity: videoOpacity }}
-        className="absolute inset-0 z-0 will-change-transform"
+        className="absolute -top-24 left-0 right-0 bottom-0 z-0 will-change-transform"
       >
         <video 
           autoPlay 
@@ -66,7 +66,7 @@ const Hero = () => {
         >
             <source src="https://videos.pexels.com/video-files/7727416/7727416-hd_1920_1080_25fps.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black"></div>
       </motion.div>
 
       {/* Floating Particles - Only on desktop, reduced count */}
@@ -75,7 +75,7 @@ const Hero = () => {
           {particles.map((particle) => (
             <motion.div
               key={particle.id}
-              className="absolute w-1 h-1 bg-amber-500/30 rounded-full"
+              className="absolute w-1 h-1 bg-white/30 rounded-full"
               style={{ left: particle.left, top: particle.top }}
               animate={{ y: [0, -80, 0], opacity: [0, 0.8, 0] }}
               transition={{
@@ -90,8 +90,8 @@ const Hero = () => {
       )}
 
       {/* Static Glowing Orbs - CSS only, no animation */}
-      <div className="absolute top-20 right-10 md:right-20 w-32 md:w-64 h-32 md:h-64 bg-amber-500/20 rounded-full blur-3xl z-[1] opacity-50" />
-      <div className="absolute bottom-40 left-5 md:left-10 w-40 md:w-72 h-40 md:h-72 bg-cyan-500/10 rounded-full blur-3xl z-[1] opacity-40" />
+      <div className="absolute top-20 right-10 md:right-20 w-32 md:w-64 h-32 md:h-64 bg-white/10 rounded-full blur-3xl z-[1] opacity-50" />
+      <div className="absolute bottom-40 left-5 md:left-10 w-40 md:w-72 h-40 md:h-72 bg-gray-500/10 rounded-full blur-3xl z-[1] opacity-40" />
 
       {/* Hero Content - Simplified animations */}
       <motion.div 
@@ -105,8 +105,8 @@ const Hero = () => {
           transition={{ delay: 0.2, duration: 0.4 }}
           className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-2 sm:mb-4"
         >
-          <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-          <span className="text-amber-500 text-[10px] sm:text-xs font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase">Exclusive Collection</span>
+          <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+          <span className="text-white text-[10px] sm:text-xs font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase">Exclusive Collection</span>
         </motion.div>
 
         <motion.h1 
@@ -116,7 +116,7 @@ const Hero = () => {
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white tracking-tighter drop-shadow-2xl"
         >
           <span>FUTURE</span>{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400">DRIVE</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-white to-gray-200">DRIVE</span>
         </motion.h1>
         
         <motion.p 
@@ -158,7 +158,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.4 }}
-        className="flex flex-col lg:flex-row items-center gap-3 sm:gap-4 lg:gap-0 p-3 sm:p-4 lg:p-2 rounded-2xl lg:rounded-full w-full max-w-4xl bg-black/60 backdrop-blur-xl shadow-2xl border border-white/10 z-10"
+        className="flex flex-col lg:flex-row items-center gap-3 sm:gap-4 lg:gap-0 p-3 sm:p-4 lg:p-2 rounded-2xl lg:rounded-full w-full max-w-4xl bg-transparent border border-white/20 z-10"
       >
         
         <div className="flex-1 flex flex-col lg:flex-row items-center gap-3 sm:gap-4 lg:gap-6 xl:gap-8 px-2 sm:px-4 lg:px-6 w-full">
@@ -221,7 +221,7 @@ const Hero = () => {
           type="submit"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-black font-bold py-3 sm:py-4 px-6 sm:px-8 lg:px-10 rounded-xl lg:rounded-full transition-all duration-300 shadow-lg shadow-amber-900/50 w-full lg:w-auto mt-2 lg:mt-0 uppercase tracking-wider text-sm sm:text-base"
+          className="bg-white hover:bg-gray-200 text-black font-bold py-3 sm:py-4 px-6 sm:px-8 lg:px-10 rounded-xl lg:rounded-full transition-all duration-300 shadow-lg shadow-white/20 w-full lg:w-auto mt-2 lg:mt-0 uppercase tracking-wider text-sm sm:text-base"
         >
           Search
         </motion.button>
@@ -239,7 +239,7 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, 10, 0], opacity: [1, 0.3, 1] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-            className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-amber-500 rounded-full"
+            className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-white rounded-full"
           />
         </div>
       </motion.div>

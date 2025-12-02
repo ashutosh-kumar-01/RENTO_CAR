@@ -70,7 +70,7 @@ const Login = () => {
               onChange={(e) => setName(e.target.value)}
               value={name}
               placeholder="John Doe"
-              className="border border-white/10 bg-white/5 rounded-xl w-full p-3 mt-1 focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 outline-none transition-all text-white placeholder-gray-600"
+              className="border border-white/10 bg-white/5 rounded-xl w-full p-3 mt-1 focus:ring-2 focus:ring-white/50 focus:border-white outline-none transition-all text-white placeholder-gray-600"
               type="text"
               required
             />
@@ -82,7 +82,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             placeholder="name@example.com"
-            className="border border-white/10 bg-white/5 rounded-xl w-full p-3 mt-1 focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 outline-none transition-all text-white placeholder-gray-600"
+            className="border border-white/10 bg-white/5 rounded-xl w-full p-3 mt-1 focus:ring-2 focus:ring-white/50 focus:border-white outline-none transition-all text-white placeholder-gray-600"
             type="email"
             required
           />
@@ -93,7 +93,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             placeholder="••••••••"
-            className="border border-white/10 bg-white/5 rounded-xl w-full p-3 mt-1 focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 outline-none transition-all text-white placeholder-gray-600"
+            className="border border-white/10 bg-white/5 rounded-xl w-full p-3 mt-1 focus:ring-2 focus:ring-white/50 focus:border-white outline-none transition-all text-white placeholder-gray-600"
             type="password"
             required
             minLength={8}
@@ -104,7 +104,7 @@ const Login = () => {
               </p>
           )}
           {state === "login" && (
-              <p className="text-xs text-right text-amber-500 mt-2 cursor-pointer hover:underline">
+              <p className="text-xs text-right text-white mt-2 cursor-pointer hover:underline">
                   Forgot Password?
               </p>
           )}
@@ -112,7 +112,7 @@ const Login = () => {
 
         <button 
             disabled={isLoading}
-            className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 transition-all text-black font-bold w-full py-3 rounded-xl cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed mt-2"
+            className="bg-gradient-to-r from-white to-gray-400 hover:from-gray-200 hover:to-gray-300 transition-all text-black font-bold w-full py-3 rounded-xl cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed mt-2"
         >
           {isLoading ? 'Processing...' : (state === "register" ? "Create Account" : "Login")}
         </button>
@@ -123,7 +123,7 @@ const Login = () => {
                 Already have an account?{" "}
                 <span
                 onClick={() => setState("login")}
-                className="text-amber-500 font-semibold cursor-pointer hover:underline"
+                className="text-white font-semibold cursor-pointer hover:underline"
                 >
                 Login here
                 </span>
@@ -133,7 +133,7 @@ const Login = () => {
                 Don't have an account?{" "}
                 <span
                 onClick={() => setState("register")}
-                className="text-amber-500 font-semibold cursor-pointer hover:underline"
+                className="text-white font-semibold cursor-pointer hover:underline"
                 >
                 Sign up
                 </span>

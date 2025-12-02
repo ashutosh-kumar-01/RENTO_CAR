@@ -78,7 +78,7 @@ const ParticleField = () => {
       {[...Array(30)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 bg-amber-500/30 rounded-full"
+          className="absolute w-1 h-1 bg-white/30 rounded-full"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
@@ -104,17 +104,17 @@ const ParticleField = () => {
 const GlowingOrbs = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
     <motion.div 
-      className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+      className="absolute -top-40 -right-40 w-96 h-96 bg-gray-400/10 rounded-full blur-3xl"
       animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
       transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
     />
     <motion.div 
-      className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+      className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-400/10 rounded-full blur-3xl"
       animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
       transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
     />
     <motion.div 
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl"
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white/5 rounded-full blur-3xl"
       animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
     />
@@ -155,7 +155,7 @@ const Sparkle = ({ delay = 0 }) => (
       ease: "easeInOut"
     }}
   >
-    <div className="w-full h-full bg-amber-400 rounded-full blur-[1px]" />
+    <div className="w-full h-full bg-gray-200 rounded-full blur-[1px]" />
   </motion.div>
 )
 
@@ -304,9 +304,9 @@ const ManageCars = () => {
               transition={{ delay: 0.2 }}
             >
               <div className="relative">
-                <div className="h-14 w-1.5 bg-gradient-to-b from-amber-400 via-orange-500 to-red-600 rounded-full" />
+                <div className="h-14 w-1.5 bg-gradient-to-b from-gray-200 via-gray-300 to-gray-500 rounded-full" />
                 <motion.div
-                  className="absolute -top-1 -left-1 w-3.5 h-3.5 bg-amber-400 rounded-full blur-sm"
+                  className="absolute -top-1 -left-1 w-3.5 h-3.5 bg-gray-200 rounded-full blur-sm"
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
@@ -349,8 +349,8 @@ const ManageCars = () => {
               to="/owner/add-car"
               className="group relative flex items-center gap-3 px-8 py-4 overflow-hidden rounded-2xl font-semibold text-black"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 transition-all group-hover:scale-105" />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-r from-amber-300 via-amber-400 to-orange-400" />
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-white to-gray-300 transition-all group-hover:scale-105" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-r from-amber-300 via-gray-200 to-gray-200" />
               <motion.div
                 className="absolute inset-0 opacity-0 group-hover:opacity-30"
                 animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
@@ -377,10 +377,10 @@ const ManageCars = () => {
         className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-10 relative z-10"
       >
         {[
-          { label: 'Total Cars', value: stats.total, icon: '🚗', gradient: 'from-blue-600 via-blue-500 to-cyan-400', glow: 'shadow-blue-500/20' },
-          { label: 'Available', value: stats.available, icon: '✅', gradient: 'from-emerald-600 via-emerald-500 to-green-400', glow: 'shadow-emerald-500/20' },
-          { label: 'Unavailable', value: stats.unavailable, icon: '⏸️', gradient: 'from-orange-600 via-orange-500 to-amber-400', glow: 'shadow-orange-500/20' },
-          { label: 'Avg. Price', value: stats.avgPrice, prefix: currency, icon: '💰', gradient: 'from-purple-600 via-purple-500 to-pink-400', glow: 'shadow-purple-500/20' },
+          { label: 'Total Cars', value: stats.total, icon: 'car', gradient: 'from-gray-500 via-gray-400 to-gray-300', glow: 'shadow-gray-400/20' },
+          { label: 'Available', value: stats.available, icon: 'check', gradient: 'from-emerald-600 via-gray-400 to-gray-300', glow: 'shadow-gray-400/20' },
+          { label: 'Unavailable', value: stats.unavailable, icon: 'pause', gradient: 'from-gray-400 via-gray-300 to-gray-200', glow: 'shadow-gray-300/20' },
+          { label: 'Avg. Price', value: stats.avgPrice, prefix: currency, icon: 'dollar', gradient: 'from-purple-600 via-gray-400 to-gray-300', glow: 'shadow-gray-400/20' },
         ].map((stat, index) => (
           <TiltCard key={stat.label} intensity={8}>
             <motion.div
@@ -398,13 +398,24 @@ const ManageCars = () => {
                 className="relative z-10"
                 style={{ transform: "translateZ(30px)" }}
               >
-                <motion.span 
-                  className="text-4xl block mb-2"
+                <motion.div 
+                  className="w-10 h-10 mb-2 flex items-center justify-center"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  {stat.icon}
-                </motion.span>
+                  {stat.icon === 'car' && (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-2-4H7L5 9m14 0v8a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H8v1a1 1 0 01-1 1H6a1 1 0 01-1-1V9m14 0H5m14 0a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2a2 2 0 012-2" /></svg>
+                  )}
+                  {stat.icon === 'check' && (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  )}
+                  {stat.icon === 'pause' && (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  )}
+                  {stat.icon === 'dollar' && (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  )}
+                </motion.div>
                 <p className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
                   {stat.prefix}<AnimatedCounter value={stat.value} />
                 </p>
@@ -433,10 +444,10 @@ const ManageCars = () => {
           {/* Search with animation */}
           <div className="flex-1 relative group">
             <motion.div
-              className="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl opacity-0 group-focus-within:opacity-50 blur transition-opacity"
+              className="absolute -inset-0.5 bg-gradient-to-r from-white to-gray-400 rounded-xl opacity-0 group-focus-within:opacity-50 blur transition-opacity"
             />
             <div className="relative flex items-center">
-              <svg className="absolute left-4 w-5 h-5 text-gray-500 group-focus-within:text-amber-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="absolute left-4 w-5 h-5 text-gray-500 group-focus-within:text-gray-200 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <input
@@ -444,7 +455,7 @@ const ManageCars = () => {
                 placeholder="Search by brand, model, location..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all"
+                className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:border-white/50 focus:ring-2 focus:ring-white/20 outline-none transition-all"
               />
               {searchQuery && (
                 <motion.button
@@ -466,7 +477,7 @@ const ManageCars = () => {
             <select
               value={filterCategory}
               onChange={(e) => setFilterCategory(e.target.value)}
-              className="appearance-none px-5 py-4 pr-12 bg-white/5 border border-white/10 rounded-xl text-white focus:border-amber-500/50 outline-none transition-all cursor-pointer hover:bg-white/10"
+              className="appearance-none px-5 py-4 pr-12 bg-white/5 border border-white/10 rounded-xl text-white focus:border-white/50 outline-none transition-all cursor-pointer hover:bg-white/10"
             >
               <option value="all" className="bg-zinc-900">All Categories</option>
               {categories.map(cat => (
@@ -483,7 +494,7 @@ const ManageCars = () => {
             <select
               value={filterAvailability}
               onChange={(e) => setFilterAvailability(e.target.value)}
-              className="appearance-none px-5 py-4 pr-12 bg-white/5 border border-white/10 rounded-xl text-white focus:border-amber-500/50 outline-none transition-all cursor-pointer hover:bg-white/10"
+              className="appearance-none px-5 py-4 pr-12 bg-white/5 border border-white/10 rounded-xl text-white focus:border-white/50 outline-none transition-all cursor-pointer hover:bg-white/10"
             >
               <option value="all" className="bg-zinc-900">All Status</option>
               <option value="available" className="bg-zinc-900">🟢 Available</option>
@@ -499,12 +510,12 @@ const ManageCars = () => {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="appearance-none px-5 py-4 pr-12 bg-white/5 border border-white/10 rounded-xl text-white focus:border-amber-500/50 outline-none transition-all cursor-pointer hover:bg-white/10"
+              className="appearance-none px-5 py-4 pr-12 bg-white/5 border border-white/10 rounded-xl text-white focus:border-white/50 outline-none transition-all cursor-pointer hover:bg-white/10"
             >
-              <option value="newest" className="bg-zinc-900">🆕 Newest First</option>
-              <option value="price-high" className="bg-zinc-900">📈 Price: High → Low</option>
-              <option value="price-low" className="bg-zinc-900">📉 Price: Low → High</option>
-              <option value="name" className="bg-zinc-900">🔤 Name A-Z</option>
+              <option value="newest" className="bg-zinc-900">Newest First</option>
+              <option value="price-high" className="bg-zinc-900">Price: High → Low</option>
+              <option value="price-low" className="bg-zinc-900">Price: Low → High</option>
+              <option value="name" className="bg-zinc-900">Name A-Z</option>
             </select>
             <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -527,7 +538,7 @@ const ManageCars = () => {
                 {viewMode === mode && (
                   <motion.div
                     layoutId="viewModeIndicator"
-                    className="absolute inset-0 bg-gradient-to-r from-amber-400 to-amber-500 rounded-lg"
+                    className="absolute inset-0 bg-gradient-to-r from-gray-200 to-white rounded-lg"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -554,7 +565,7 @@ const ManageCars = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   exit={{ scale: 0 }}
-                  className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-400 rounded-full text-xs border border-blue-500/30"
+                  className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-gray-400/20 to-gray-400/20 text-gray-300 rounded-full text-xs border border-gray-400/30"
                 >
                   🔍 "{searchQuery}"
                   <button onClick={() => setSearchQuery('')} className="hover:text-white transition-colors">×</button>
@@ -565,7 +576,7 @@ const ManageCars = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   exit={{ scale: 0 }}
-                  className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 rounded-full text-xs border border-purple-500/30"
+                  className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-gray-400/20 to-gray-400/20 text-gray-300 rounded-full text-xs border border-gray-400/30"
                 >
                   📁 {filterCategory}
                   <button onClick={() => setFilterCategory('all')} className="hover:text-white transition-colors">×</button>
@@ -576,7 +587,7 @@ const ManageCars = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   exit={{ scale: 0 }}
-                  className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-400 rounded-full text-xs border border-amber-500/30"
+                  className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-white/20 to-gray-300/20 text-gray-200 rounded-full text-xs border border-white/30"
                 >
                   {filterAvailability === 'available' ? '🟢' : '🔴'} {filterAvailability}
                   <button onClick={() => setFilterAvailability('all')} className="hover:text-white transition-colors">×</button>
@@ -584,7 +595,7 @@ const ManageCars = () => {
               )}
               <button 
                 onClick={() => { setSearchQuery(''); setFilterCategory('all'); setFilterAvailability('all'); }}
-                className="text-gray-500 hover:text-red-400 text-xs underline transition-colors"
+                className="text-gray-500 hover:text-gray-300 text-xs underline transition-colors"
               >
                 Clear all
               </button>
@@ -605,7 +616,7 @@ const ManageCars = () => {
             Showing <span className="text-white font-bold text-lg">{filteredCars.length}</span> of <span className="text-white font-medium">{cars.length}</span> cars
           </p>
           {filteredCars.length !== cars.length && (
-            <span className="px-2 py-1 bg-amber-500/10 text-amber-400 rounded-lg text-xs border border-amber-500/20">
+            <span className="px-2 py-1 bg-white/10 text-gray-200 rounded-lg text-xs border border-white/20">
               Filtered
             </span>
           )}
@@ -614,7 +625,7 @@ const ManageCars = () => {
           onClick={fetchCars}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-amber-400 text-sm transition-all"
+          className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-gray-200 text-sm transition-all"
         >
           <motion.svg 
             className="w-4 h-4" 
@@ -646,7 +657,9 @@ const ManageCars = () => {
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span className="text-6xl">🚗</span>
+            <svg className="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-2-4H7L5 9m14 0v8a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1H8v1a1 1 0 01-1 1H6a1 1 0 01-1-1V9m14 0H5m14 0a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2a2 2 0 012-2" />
+            </svg>
           </motion.div>
           <h3 className="text-2xl font-bold text-white mb-3">
             {cars.length === 0 ? "No Cars Listed Yet" : "No cars match your filters"}
@@ -659,7 +672,7 @@ const ManageCars = () => {
           {cars.length === 0 ? (
             <Link 
               to="/owner/add-car"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-black font-bold rounded-2xl hover:shadow-lg hover:shadow-amber-500/25 transition-all"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-white to-gray-400 text-black font-bold rounded-2xl hover:shadow-lg hover:shadow-white/25 transition-all"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -669,7 +682,7 @@ const ManageCars = () => {
           ) : (
             <button 
               onClick={() => { setSearchQuery(''); setFilterCategory('all'); setFilterAvailability('all'); }}
-              className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-amber-400 transition-all"
+              className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-gray-200 transition-all"
             >
               Clear all filters
             </button>
@@ -691,7 +704,7 @@ const ManageCars = () => {
                   transition={{ delay: index * 0.05, type: "spring" }}
                   onMouseEnter={() => setHoveredCard(car._id)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className={`group relative rounded-3xl bg-gradient-to-br from-zinc-900/95 to-black border border-white/10 overflow-hidden hover:border-amber-500/30 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-amber-500/10 ${viewMode === 'list' ? 'flex' : ''}`}
+                  className={`group relative rounded-3xl bg-gradient-to-br from-zinc-900/95 to-black border border-white/10 overflow-hidden hover:border-white/30 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-white/10 ${viewMode === 'list' ? 'flex' : ''}`}
                   style={{ transformStyle: "preserve-3d" }}
                 >
                   {/* Sparkle effects on hover */}
@@ -710,11 +723,11 @@ const ManageCars = () => {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: index * 0.05 + 0.2 }}
-                    className={`absolute top-4 left-4 z-20 px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md ${car.isAvailable ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-400/40' : 'bg-red-500/20 text-red-300 border border-red-400/40'}`}
+                    className={`absolute top-4 left-4 z-20 px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md ${car.isAvailable ? 'bg-gray-400/20 text-emerald-300 border border-gray-300/40' : 'bg-gray-400/20 text-red-300 border border-gray-300/40'}`}
                   >
                     <div className="flex items-center gap-2">
                       <motion.div 
-                        className={`w-2 h-2 rounded-full ${car.isAvailable ? 'bg-emerald-400' : 'bg-red-400'}`}
+                        className={`w-2 h-2 rounded-full ${car.isAvailable ? 'bg-gray-300' : 'bg-gray-300'}`}
                         animate={car.isAvailable ? { scale: [1, 1.3, 1], opacity: [1, 0.7, 1] } : {}}
                         transition={{ duration: 2, repeat: Infinity }}
                       />
@@ -740,7 +753,7 @@ const ManageCars = () => {
                       animate={{ y: 0, opacity: 1 }}
                       transition={{ delay: index * 0.05 + 0.3 }}
                     >
-                      <span className="text-amber-400 font-bold text-xl">{currency}{car.pricePerDay}</span>
+                      <span className="text-gray-200 font-bold text-xl">{currency}{car.pricePerDay}</span>
                       <span className="text-gray-400 text-xs">/day</span>
                     </motion.div>
                   </div>
@@ -748,7 +761,7 @@ const ManageCars = () => {
                   {/* Content */}
                   <div className={`p-6 ${viewMode === 'list' ? 'flex-1 flex flex-col justify-between' : ''}`} style={{ transform: "translateZ(20px)" }}>
                     <div>
-                      <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors duration-300">
+                      <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-gray-200 transition-colors duration-300">
                         {car.brand} {car.model}
                       </h3>
                       <p className="text-gray-500 text-sm mb-5 flex items-center gap-2">
@@ -760,17 +773,21 @@ const ManageCars = () => {
                       {/* Features Pills */}
                       <div className="flex flex-wrap gap-2 mb-6">
                         {[
-                          { icon: '📍', value: car.location },
-                          { icon: '⚙️', value: car.transmission },
-                          { icon: '⛽', value: car.fuel_type },
-                          { icon: '👥', value: `${car.seating_capacity} seats` }
+                          { icon: 'location', value: car.location },
+                          { icon: 'gear', value: car.transmission },
+                          { icon: 'fuel', value: car.fuel_type },
+                          { icon: 'users', value: `${car.seating_capacity} seats` }
                         ].map((feature, i) => (
                           <motion.span 
                             key={i}
                             className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 rounded-xl text-xs text-gray-400 border border-white/5 transition-colors cursor-default"
                             whileHover={{ scale: 1.05 }}
                           >
-                            {feature.icon} {feature.value}
+                            {feature.icon === 'location' && <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>}
+                            {feature.icon === 'gear' && <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>}
+                            {feature.icon === 'fuel' && <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>}
+                            {feature.icon === 'users' && <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>}
+                            {feature.value}
                           </motion.span>
                         ))}
                       </div>
@@ -785,8 +802,8 @@ const ManageCars = () => {
                         whileTap={{ scale: 0.98 }}
                         className={`flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold transition-all ${
                           car.isAvailable 
-                            ? 'bg-orange-500/10 text-orange-400 border-2 border-orange-500/30 hover:bg-orange-500/20 hover:border-orange-500/50' 
-                            : 'bg-emerald-500/10 text-emerald-400 border-2 border-emerald-500/30 hover:bg-emerald-500/20 hover:border-emerald-500/50'
+                            ? 'bg-gray-300/10 text-gray-200 border-2 border-gray-300/30 hover:bg-gray-300/20 hover:border-gray-300/50' 
+                            : 'bg-gray-400/10 text-gray-300 border-2 border-gray-400/30 hover:bg-gray-400/20 hover:border-gray-400/50'
                         } disabled:opacity-50 disabled:cursor-not-allowed`}
                       >
                         {actionLoading === car._id ? (
@@ -816,7 +833,7 @@ const ManageCars = () => {
                         onClick={() => { setSelectedCar(car); setShowDeleteModal(true); }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="p-3 rounded-xl bg-red-500/10 text-red-400 border-2 border-red-500/30 hover:bg-red-500/20 hover:border-red-500/50 transition-all"
+                        className="p-3 rounded-xl bg-gray-400/10 text-gray-300 border-2 border-gray-400/30 hover:bg-gray-400/20 hover:border-gray-400/50 transition-all"
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -851,11 +868,11 @@ const ManageCars = () => {
             >
               <div className="text-center">
                 <motion.div 
-                  className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-red-500/20 to-red-600/20 flex items-center justify-center border border-red-500/30"
+                  className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-gray-400/20 to-gray-500/20 flex items-center justify-center border border-gray-400/30"
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
-                  <svg className="w-10 h-10 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                   </svg>
                 </motion.div>
@@ -863,8 +880,8 @@ const ManageCars = () => {
                 <p className="text-gray-400 mb-2">
                   Are you sure you want to permanently delete
                 </p>
-                <p className="text-amber-400 font-semibold text-lg mb-2">{selectedCar.brand} {selectedCar.model}</p>
-                <p className="text-red-400/80 text-sm mb-8 flex items-center justify-center gap-2">
+                <p className="text-gray-200 font-semibold text-lg mb-2">{selectedCar.brand} {selectedCar.model}</p>
+                <p className="text-gray-300/80 text-sm mb-8 flex items-center justify-center gap-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01" />
                   </svg>
@@ -885,7 +902,7 @@ const ManageCars = () => {
                     disabled={actionLoading === selectedCar._id}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 transition-all font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-gray-400 to-gray-500 text-white hover:from-gray-500 hover:to-red-700 transition-all font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {actionLoading === selectedCar._id ? (
                       <motion.div 
